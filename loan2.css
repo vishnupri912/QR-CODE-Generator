@@ -1,0 +1,135 @@
+/* ===================== */
+/* Root CSS Variables */
+/* ===================== */
+:root {
+    --bcg-color: #001122;         /* Background color of the page */
+    --primary-color: #155e75;     /* Main container color */
+    --border-radiue: 8px;         /* Border radius for rounded corners */
+    --secondary-color: #ffffff;   /* Text and button color (white) */
+    --border-color: #7fb7c9;      /* Border color for inputs and QR image */
+}
+
+/* ===================== */
+/* Reset and Base Styles */
+/* ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;       /* Includes padding/border in width/height */
+    font-family: sans-serif;      /* Default font for all elements */
+}
+
+/* ===================== */
+/* Body Layout */
+/* ===================== */
+body {
+    width: 100%;
+    height: 100vh;                       /* Full height of viewport */
+    display: flex;                       /* Flexbox for centering */
+    justify-content: center;            /* Horizontal centering */
+    align-items: center;                /* Vertical centering */
+    background-color: var(--bcg-color) !important; /* Background from variable */
+}
+
+/* ===================== */
+/* Main QR Generator Box */
+/* ===================== */
+.box {
+    background-color: var(--primary-color); /* Box background color */
+    padding: 30px;
+    width: 400px;
+    border-radius: var(--border-radiue);    /* Rounded corners */
+}
+
+/* ===================== */
+/* QR Header */
+/* ===================== */
+.qr-header h1 {
+    font-size: 26px;
+    text-align: center;
+    color: var(--secondary-color);         /* Text color: white */
+    margin-bottom: 24px;
+    text-transform: uppercase;             /* Uppercase title */
+}
+
+/* ===================== */
+/* Input and Select Fields */
+/* ===================== */
+.qr-header input {
+    width: 100%;
+    margin-block: 12px;                    /* Margin above and below */
+}
+
+.qr-header input,
+.qr-header select {
+    padding: 8px;
+    border-radius: var(--border-radiue);   /* Rounded corners */
+    font-size: 18px;
+    outline: none;
+    border: 2px solid var(--border-color); /* Blueish border */
+}
+
+/* ===================== */
+/* Labels for inputs */
+/* ===================== */
+.qr-header label {
+    color: var(--secondary-color);         /* Label text color: white */
+    font-size: 20px;
+}
+
+/* Container for input + select */
+.qr-header div {
+    display: flex;
+    justify-content: space-between;        /* Put input and select side by side with space between */
+}
+
+/* ===================== */
+/* Footer (Buttons) */
+/* ===================== */
+.qr-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.qr-footer a {
+    background-color: var(--secondary-color); /* Button background: white */
+    text-decoration: none;
+    font-size: 20px;
+    padding: 14px 36px;        /* Top-bottom + left-right padding */
+    margin-inline: 4px;     /* Margin between buttons */
+    color: var(--primary-color);      /* Text color: matches box background */
+    font-weight: 600;
+    border-radius: var(--border-radiue);
+}
+
+/* ===================== */
+/* QR Code Display Area */
+/* ===================== */
+.qr-body {
+    display: grid;
+    place-items: center; /* Center QR inside the container */
+    padding: 20px;
+}
+
+.qr-body img {
+    max-width: 100%;    /* Make QR responsive within container */
+    max-height: 100%;
+    margin-block: 10px;
+    padding: 20px;
+    border: 0.5px solid var(--border-color); /* Light border */
+    border-radius: var(--border-radiue);
+}
+
+/* ===================== */
+/* Responsive Design (Mobile) */
+/* ===================== */
+@media screen and (max-width: 520px) {
+    .box {
+        width: 80%; /* Shrink the box on small screens */
+    }
+
+    .qr-footer a {
+        padding: 12px;  /* Slightly smaller buttons */
+        font-size: 16px;
+    }
+}
